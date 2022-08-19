@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CharacterView: View {
     var body: some View {
+        
 
         VStack {
             NavigationView() {

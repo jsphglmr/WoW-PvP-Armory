@@ -10,8 +10,9 @@
 		C7952BF628AC4BB600D8E51F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952BF528AC4BB600D8E51F /* SearchBar.swift */; };
 		C7952BF828AC4C1600D8E51F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952BF728AC4C1600D8E51F /* ItemView.swift */; };
 		C7952BFA28AD950200D8E51F /* PvPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952BF928AD950200D8E51F /* PvPModel.swift */; };
-		C7952C0028AD9C0D00D8E51F /* JSON Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952BFF28AD9C0D00D8E51F /* JSON Manager.swift */; };
+		C7952C0028AD9C0D00D8E51F /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952BFF28AD9C0D00D8E51F /* JSONManager.swift */; };
 		C7952C0228AD9C6000D8E51F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952C0128AD9C6000D8E51F /* Constants.swift */; };
+		C7952C0428ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952C0328ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift */; };
 		C7DB16FB28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB16FA28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift */; };
 		C7DB16FD28A4970C001A66FD /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB16FC28A4970C001A66FD /* CharacterView.swift */; };
 		C7DB16FF28A4970D001A66FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DB16FE28A4970D001A66FD /* Assets.xcassets */; };
@@ -22,8 +23,9 @@
 		C7952BF528AC4BB600D8E51F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		C7952BF728AC4C1600D8E51F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		C7952BF928AD950200D8E51F /* PvPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PvPModel.swift; sourceTree = "<group>"; };
-		C7952BFF28AD9C0D00D8E51F /* JSON Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON Manager.swift"; sourceTree = "<group>"; };
+		C7952BFF28AD9C0D00D8E51F /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		C7952C0128AD9C6000D8E51F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C7952C0328ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEquipmentSummaryModel.swift; sourceTree = "<group>"; };
 		C7DB16F728A4970C001A66FD /* WoW PvP Armory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW PvP Armory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DB16FA28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoW_PvP_ArmoryApp.swift; sourceTree = "<group>"; };
 		C7DB16FC28A4970C001A66FD /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				C7952BF928AD950200D8E51F /* PvPModel.swift */,
+				C7952C0328ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift */,
 				C7952C0128AD9C6000D8E51F /* Constants.swift */,
 			);
 			name = Model;
@@ -71,7 +74,7 @@
 		C7952BFE28AD9B5C00D8E51F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C7952BFF28AD9C0D00D8E51F /* JSON Manager.swift */,
+				C7952BFF28AD9C0D00D8E51F /* JSONManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -186,7 +189,8 @@
 			files = (
 				C7DB16FD28A4970C001A66FD /* CharacterView.swift in Sources */,
 				C7DB16FB28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift in Sources */,
-				C7952C0028AD9C0D00D8E51F /* JSON Manager.swift in Sources */,
+				C7952C0028AD9C0D00D8E51F /* JSONManager.swift in Sources */,
+				C7952C0428ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift in Sources */,
 				C7952BF628AC4BB600D8E51F /* SearchBar.swift in Sources */,
 				C7952C0228AD9C6000D8E51F /* Constants.swift in Sources */,
 				C7952BFA28AD950200D8E51F /* PvPModel.swift in Sources */,
