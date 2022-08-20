@@ -14,6 +14,7 @@
 		C7952C0228AD9C6000D8E51F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952C0128AD9C6000D8E51F /* Constants.swift */; };
 		C7952C0428ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952C0328ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift */; };
 		C7952C0628B0682300D8E51F /* CharacterEquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952C0528B0682300D8E51F /* CharacterEquipmentView.swift */; };
+		C7952C0828B152C700D8E51F /* CharacterAchievementStatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952C0728B152C700D8E51F /* CharacterAchievementStatisticsModel.swift */; };
 		C7DB16FB28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB16FA28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift */; };
 		C7DB16FD28A4970C001A66FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB16FC28A4970C001A66FD /* ContentView.swift */; };
 		C7DB16FF28A4970D001A66FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DB16FE28A4970D001A66FD /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		C7952C0128AD9C6000D8E51F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7952C0328ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEquipmentSummaryModel.swift; sourceTree = "<group>"; };
 		C7952C0528B0682300D8E51F /* CharacterEquipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEquipmentView.swift; sourceTree = "<group>"; };
+		C7952C0728B152C700D8E51F /* CharacterAchievementStatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAchievementStatisticsModel.swift; sourceTree = "<group>"; };
 		C7DB16F728A4970C001A66FD /* WoW PvP Armory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW PvP Armory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DB16FA28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoW_PvP_ArmoryApp.swift; sourceTree = "<group>"; };
 		C7DB16FC28A4970C001A66FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			children = (
 				C7952BF928AD950200D8E51F /* PvPModel.swift */,
 				C7952C0328ADA85400D8E51F /* CharacterEquipmentSummaryModel.swift */,
+				C7952C0728B152C700D8E51F /* CharacterAchievementStatisticsModel.swift */,
 				C7952C0128AD9C6000D8E51F /* Constants.swift */,
 			);
 			name = Model;
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7952C0828B152C700D8E51F /* CharacterAchievementStatisticsModel.swift in Sources */,
 				C7952C0628B0682300D8E51F /* CharacterEquipmentView.swift in Sources */,
 				C7DB16FD28A4970C001A66FD /* ContentView.swift in Sources */,
 				C7DB16FB28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift in Sources */,

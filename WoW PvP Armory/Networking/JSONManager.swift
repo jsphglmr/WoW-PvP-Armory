@@ -9,8 +9,13 @@ import SwiftUI
 
 class JSONManager {
     
-    //MARK: - Perform Request
     
+    @Published var characterEquipment = [CharacterEquipmentSummaryModel]()
+    @Published var characterAchievementStatistics = [CharacterAchievementStatisticsModel]()
+    @Published var isLoading: Bool = false
+    @Published var errorMessage: String? = nil
+    
+    //MARK: - Perform Request
     func performRequest<T:Decodable>(with urlString: String, completion: @escaping (Result<T, Error>) -> ()) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
@@ -53,4 +58,11 @@ class JSONManager {
         let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/equipment"
         performRequest(with: url, completion: completion)
     }
+    
+    func fetchWowCharacterAchievementStatistics(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterAchievementStatisticsModel, Error>) -> ()) {
+        let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/achievements/statistics"
+        performRequest(with: url, completion: completion)
+    }
+    
+    
 }
