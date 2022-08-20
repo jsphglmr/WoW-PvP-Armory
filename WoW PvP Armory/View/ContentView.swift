@@ -11,6 +11,15 @@ struct ContentView: View {
     var body: some View {
           Text("test")
         
+//          
+//          if characterView.isLoading {
+//              LoadingView()
+//          }else if characterView.errorMessage != nil  {
+//              ErrorView(characterView: breedFetcher)
+//          }else {
+//              CharacterEquipmentView()
+//          }
+        
     }
 }
 
