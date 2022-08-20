@@ -11,7 +11,7 @@ import SwiftUI
 struct WoW_PvP_ArmoryApp: App {
     var body: some Scene {
         WindowGroup {
-            CharacterView()
+            ContentView()
         }
     }
 }

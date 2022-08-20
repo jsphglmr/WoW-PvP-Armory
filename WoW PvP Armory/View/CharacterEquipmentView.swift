@@ -1,24 +1,32 @@
 //
-//  ContentView.swift
+//  CharacterEquipmentView.swift
 //  WoW PvP Armory
 //
-//  Created by Joseph Gilmore on 8/10/22.
+//  Created by Joseph Gilmore on 8/19/22.
 //
 
 import SwiftUI
 
-struct CharacterView: View {
+struct CharacterEquipmentView: View {
+    
+    @State var name: String = ""
+    @State var realm: String = ""
+    
+    init(name: String, realm: String) {
+        self.name = name
+        self.realm = realm
+    }
+    
     var body: some View {
-        
-
         VStack {
             NavigationView() {
                 //navigation view + search bar
+                
             }
             Divider()
             HStack {
                 Text("<<title>>")
-                Text("<<name>>")
+                Text(name)
             }
             HStack {
                 Text("<<level>>")
@@ -29,7 +37,7 @@ struct CharacterView: View {
                     .font(.system(size: 14))
                 Text("<<class>>")
                     .font(.system(size: 14))
-                Text("<<server>>")
+                Text(realm)
                     .font(.system(size: 14))
             }
             Divider()
@@ -62,17 +70,12 @@ struct CharacterView: View {
                     ItemView(imageName: "itemPlaceholder")
                 }
             }
-
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CharacterEquipmentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            CharacterView()
-                .previewDevice("iPhone 13 Pro")
-        }
+        CharacterEquipmentView(name: "Jojo", realm: "Tichondrius")
     }
 }
-

@@ -21,7 +21,6 @@ struct SearchBar: View {
                 }
                 .navigationTitle("Servers")
             }
-          // 4.
           .searchable(text: $searchQuery)
         }
     }
