@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PvPModel: Codable {
+struct PvPColorModel: Codable {
     // raider.io color scale for rating tiers
     // https://raiderio-color.wisak.me/
 }
