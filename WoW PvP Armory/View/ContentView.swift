@@ -9,9 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-          Text("test")
+        VStack{
+            Text("searchbar placeholder")
+              .font(.sfMonoMedium(size: 28))
+            
+            Spacer()
+        }
+          
         
-//          
+        
 //          if characterView.isLoading {
 //              LoadingView()
 //          }else if characterView.errorMessage != nil  {

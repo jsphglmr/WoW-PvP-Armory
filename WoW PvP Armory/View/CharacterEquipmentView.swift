@@ -20,6 +20,7 @@ struct CharacterEquipmentView: View {
     var body: some View {
         VStack {
             NavigationView() {
+                
                 //navigation view + search bar
                 
             }
@@ -53,6 +54,7 @@ struct CharacterEquipmentView: View {
                         ItemView(imageName: "itemPlaceholder")
                         ItemView(imageName: "itemPlaceholder")
                     }
+                    .padding(.leading, 5.0)
                     Spacer()
                     VStack{
                         ItemView(imageName: "itemPlaceholder")
@@ -64,6 +66,7 @@ struct CharacterEquipmentView: View {
                         ItemView(imageName: "itemPlaceholder")
                         ItemView(imageName: "itemPlaceholder")
                     }
+                    .padding(.trailing, 5.0)
                 }
                 HStack {
                     ItemView(imageName: "itemPlaceholder")

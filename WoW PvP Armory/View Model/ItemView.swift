@@ -19,7 +19,7 @@ struct ItemView: View {
         }) {
             Image(imageName)
                 .resizable()
-                .frame(width: 50, height: 50, alignment: .center)
+                .frame(width: 40, height: 40, alignment: .center)
                 .overlay(Rectangle().stroke(lineWidth: 4))
         }
     }
