@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-class JSONManager {
+class JSONManager: ObservableObject {
     
     
-    @Published var characterEquipment = [CharacterEquipmentSummaryModel]()
-    @Published var characterAchievementStatistics = [CharacterAchievementStatisticsModel]()
+    @Published var characterEquipment = [CharacterEquipmentSummary]()
+    @Published var characterAchievementStatistics = [CharacterAchievementStatistics]()
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
+    
+    
     
     //MARK: - Perform Request
     func performRequest<T:Decodable>(with urlString: String, completion: @escaping (Result<T, Error>) -> ()) {
@@ -54,12 +56,12 @@ class JSONManager {
     
     //MARK: - Fetch
     
-    func fetchWowCharacterEquipmentSummary(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterEquipmentSummaryModel, Error>) -> ()) {
+    func fetchWowCharacterEquipmentSummary(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterEquipmentSummary, Error>) -> ()) {
         let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/equipment"
         performRequest(with: url, completion: completion)
     }
     
-    func fetchWowCharacterAchievementStatistics(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterAchievementStatisticsModel, Error>) -> ()) {
+    func fetchWowCharacterAchievementStatistics(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterAchievementStatistics, Error>) -> ()) {
         let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/achievements/statistics"
         performRequest(with: url, completion: completion)
     }
