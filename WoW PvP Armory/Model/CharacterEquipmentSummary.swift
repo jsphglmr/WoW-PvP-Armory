@@ -22,6 +22,8 @@ struct EquippedItem: Codable {
 
 struct Item: Codable {
     let key: Int
+    let assets: Assets?
+    let id: Int?
 }
 
 struct Slot: Codable {
@@ -34,4 +36,8 @@ struct Quality: Codable {
 
 struct InventoryType: Codable {
     let type, name: String
+}
+
+struct Assets: Codable {
+    let key, value: String?
 }

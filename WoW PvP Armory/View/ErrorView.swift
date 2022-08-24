@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct ErrorView: View {
+    @ObservedObject var characterSearch: CharacterSearch
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            //add searchbar to top ov vstack
+            
+            Text("ERROR!")
+                .font(.system(size: 80))
+            
+            Text(characterSearch.errorMessage ?? "")
+            
+        }
     }
 }
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView()
+        ErrorView(characterSearch: CharacterSearch())
     }
 }

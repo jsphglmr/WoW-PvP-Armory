@@ -13,7 +13,7 @@ struct LoadingSpinner: View {
             .resizable(resizingMode: .stretch)
             .aspectRatio(contentMode: .fit)
             .frame(width: 50.0, height: 50.0)
-            .foregroundColor(.gray)
+            .foregroundColor(.ui.text)
     }
 }
 

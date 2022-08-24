@@ -9,12 +9,16 @@ import SwiftUI
 
 struct LoadingView: View {
     
+    
     var body: some View {
-        VStack{
-            Text("loading")
-                .font(.sfMonoBold(size: 24))
-                .foregroundColor(.gray)
-            LoadingSpinner()
+        ZStack{
+            Color.ui.background.ignoresSafeArea()
+            VStack{
+                Text("loading")
+                    .font(.sfMonoBold(size: 24))
+                    .foregroundColor(Color.ui.text)
+                LoadingSpinner()
+            }
         }
     }
 }

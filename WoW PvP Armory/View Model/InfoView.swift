@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct InfoView: View {
+    
+    let info: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct InfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        InfoView()
+        Text(info)
+            .font(.sfMonoRegular(size: 16))
+            .foregroundColor(Color.ui.text)
     }
 }

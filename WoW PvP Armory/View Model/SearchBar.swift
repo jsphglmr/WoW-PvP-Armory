@@ -7,21 +7,36 @@
 
 import SwiftUI
 
-struct SearchBar: View {
-    
-    let servers = ["server1", "server2", "server3", "server4", "server5", "server6", "server7", "server8"]
-    
-    @State private var searchQuery = ""
-    
-    var body: some View {
-        NavigationView {
-            List {
-              ForEach(searchQuery == "" ? servers: servers.filter { $0.contains(searchQuery)}, id: \.self) { server in
-                    Text(server)
-                }
-                .navigationTitle("Servers")
-            }
-          .searchable(text: $searchQuery)
+struct SearchBar: UIViewRepresentable {
+
+    @Binding var text: String
+
+    class Coordinator: NSObject, UISearchBarDelegate {
+
+        @Binding var text: String
+
+        init(text: Binding<String>) {
+            _text = text
         }
+
+        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            text = searchText
+        }
+    }
+
+    func makeCoordinator() -> SearchBar.Coordinator {
+        return Coordinator(text: $text)
+    }
+
+    func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
+        let searchBar = UISearchBar(frame: .zero)
+        searchBar.delegate = context.coordinator
+        searchBar.searchBarStyle = .minimal
+        searchBar.placeholder = "i.e. Sodah"
+        return searchBar
+    }
+
+    func updateUIView(_ uiView: UISearchBar, context: UIViewRepresentableContext<SearchBar>) {
+        uiView.text = text
     }
 }

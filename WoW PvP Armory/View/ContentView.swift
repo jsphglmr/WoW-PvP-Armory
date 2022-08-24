@@ -8,24 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var characterSearch = CharacterSearch()
+    @State var name: String = ""
+    @State var realm: String = ""
+    
+    
     var body: some View {
-        VStack{
-            Text("searchbar placeholder")
-              .font(.sfMonoMedium(size: 28))
+        ZStack {
+            Color.ui.background.ignoresSafeArea()
+
+            VStack{
+                Text("searchbar placeholder")
+                    .font(.sfMonoRegular(size: 24))
+                    .foregroundColor(.ui.text)
+                
+                Spacer()
+            }
             
-            Spacer()
+            if characterSearch.isLoading {
+                LoadingView()
+            } else if characterSearch.errorMessage != nil  {
+                ErrorView(characterSearch: characterSearch)
+            } else {
+                CharacterEquipmentView(name: name, realm: realm)
+            }
+            
         }
-          
-        
-        
-//          if characterView.isLoading {
-//              LoadingView()
-//          }else if characterView.errorMessage != nil  {
-//              ErrorView(characterView: breedFetcher)
-//          }else {
-//              CharacterEquipmentView()
-//          }
-        
     }
 }
 

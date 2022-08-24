@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CharacterEquipmentView: View {
     
+    @StateObject private var characterVM = CharacterListViewModel()
+    @State private var searchText: String = ""
     @State var name: String = ""
     @State var realm: String = ""
     
@@ -18,64 +20,83 @@ struct CharacterEquipmentView: View {
     }
     
     var body: some View {
-        VStack {
-            NavigationView() {
-                
-                //navigation view + search bar
-                
-            }
-            Divider()
-            HStack {
-                Text("<<title>>")
-                Text(name)
-            }
-            HStack {
-                Text("<<level>>")
-                    .font(.system(size: 14))
-                Text("<<race>>")
-                    .font(.system(size: 14))
-                Text("<<spec>>")
-                    .font(.system(size: 14))
-                Text("<<class>>")
-                    .font(.system(size: 14))
-                Text(realm)
-                    .font(.system(size: 14))
-            }
-            Divider()
+        ZStack {
+            Color.ui.background
+                .ignoresSafeArea()
+            
             VStack {
-                HStack{
-                    VStack{
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
+                HStack {
+                    VStack {
+                        SearchBar(text: $searchText)
+                    }.padding(2)
+                    VStack {
+                        Picker("Choose a Server", selection: $name) {
+                            ForEach(ServerList.serverListNA, id: \.self) {
+                                Text($0)
+                            }
+                            .pickerStyle(.menu)
+                        }
+                        .font(.sfMonoRegular(size: 16))
+                        .foregroundColor(Color.ui.text)
                     }
-                    .padding(.leading, 5.0)
+                    .font(.sfMonoRegular(size: 16))
+                    .foregroundColor(Color.ui.text)
+                    .frame().background(Color.ui.picker)
+                    .padding(2)
                     Spacer()
-                    VStack{
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                        ItemView(imageName: "itemPlaceholder")
-                    }
-                    .padding(.trailing, 5.0)
+                }
+                
+                Spacer()
+                HStack {
+                    InfoView(info: "title")
+                    InfoView(info: "name")
                 }
                 HStack {
-                    ItemView(imageName: "itemPlaceholder")
-                    ItemView(imageName: "itemPlaceholder")
+                    InfoView(info: "level")
+                    InfoView(info: "race")
+                    InfoView(info: "spec")
+                    InfoView(info: "class")
+                    InfoView(info: "realm")
+                }
+                
+                Divider()
+                VStack {
+                    HStack{
+                        VStack{
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                        }
+                        .padding(.leading, 5.0)
+                        Spacer()
+                        VStack{
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                            ItemView(imageName: "itemPlaceholder")
+                        }
+                        .padding(.trailing, 5.0)
+                    }
+                    HStack {
+                        ItemView(imageName: "itemPlaceholder")
+                        ItemView(imageName: "itemPlaceholder")
+                    }
                 }
             }
         }
     }
 }
+
+
 
 struct CharacterEquipmentView_Previews: PreviewProvider {
     static var previews: some View {
