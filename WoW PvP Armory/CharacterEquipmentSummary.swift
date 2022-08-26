@@ -1,8 +1,8 @@
 //
-//  CharacterEquipmentSummaryModel.swift
+//  CharacterEquipment.swift
 //  WoW PvP Armory
 //
-//  Created by Joseph Gilmore on 8/17/22.
+//  Created by Joseph Gilmore on 8/25/22.
 //
 
 import Foundation
