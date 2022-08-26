@@ -7,83 +7,139 @@
 
 import SwiftUI
 
-enum NetworkError: Error {
-    case badURL
-    case badID
-}
-
-@MainActor
-class CharacterListViewModel: ObservableObject {
-    
-    @Published var items: [ItemViewModel] = []
-    
-    func search(name: String, realm: String) async {
-        do {
-            let items = try await CharacterSearch().getCharacterEquipment(name: name, realm: realm)
-            self.items = items.map(ItemViewModel.init)
-        } catch {
-            print(error)
-        }
-    }
-}
-
 class CharacterSearch: ObservableObject {
     
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     
+    @Published var character: Character?
+    @Published var characterEquipment: CharacterEquipmentSummary?
+    @Published var characterStatistics: CharacterAchievementStatistics?
+    @Published var current2v2: PvP?
+    @Published var current3v3: PvP?
+    @Published var currentRBG: PvP?
+    
     let jsonManager: JSONManager
     
-    init(jsonManager: JSONManager = JSONManager()) {
+    init(jsonManager: JSONManager = JSONManager(), name: String, realm: String, itemID: Int?) {
         self.jsonManager = jsonManager
+        
+        fetchCurrent2v2Rating(name: "jojo", realm: "Tichondrius") { result in
+            switch result {
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+            case .success(let pvp):
+                self.current2v2 = pvp
+            }
+        }
+        
+        fetchAllInfo(name: name, realm: realm, itemID: itemID)
+        dump(character)
+        dump(characterEquipment)
+        dump(characterStatistics)
+        dump(current2v2)
+        dump(current3v3)
+        dump(currentRBG)
     }
     
-    //MARK: - Fetch
     
-    func fetchWowCharacterEquipmentSummary(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterEquipmentSummary, Error>) -> ()) {
+    func fetchAllInfo(name: String, realm: String, itemID: Int?) {
+        
+        isLoading = true
+        errorMessage = nil
+        
+        DispatchQueue.main.async {
+            self.isLoading = false
+            
+        //equipment
+            self.fetchEquipment(name: name, realm: realm) { result in
+                switch result {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    
+                case .success(let characterEquipment):
+                    self.characterEquipment = characterEquipment
+                }
+            }
+        //stats
+            self.fetchAchievementStatistics(name: name, realm: realm) { result in
+                switch result {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    
+                case .success(let characterStatistics):
+                    self.characterStatistics = characterStatistics
+                }
+            }
+        //2v2
+            self.fetchCurrent2v2Rating(name: name, realm: realm) { result in
+                switch result {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    
+                case .success(let pvp):
+                    self.current2v2 = pvp
+                }
+            }
+        //3v3
+            self.fetchCurrent3v3Rating(name: name, realm: realm) { result in
+                switch result {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    
+                case .success(let pvp):
+                    self.current3v3 = pvp
+                }
+            }
+        //rbg
+            self.fetchCurrentRBGRating(name: name, realm: realm) { result in
+                switch result {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    
+                case .success(let pvp):
+                    self.currentRBG = pvp
+                }
+            }
+        }
+    }
+    
+    //MARK: - Fetch Functions
+    
+    //current character gear
+    func fetchEquipment(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterEquipmentSummary, Error>) -> ()) {
         let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/equipment"
         jsonManager.performRequest(with: url, completion: completion)
     }
     
-    func fetchWowCharacterAchievementStatistics(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterAchievementStatistics, Error>) -> ()) {
+    //highest pvp ratings - stats
+    func fetchAchievementStatistics(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterAchievementStatistics, Error>) -> ()) {
         let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/achievements/statistics"
         jsonManager.performRequest(with: url, completion: completion)
     }
     
-    
-    //MARK: - async calls
-    
-    func getCharacterEquipment(name: String, realm: String) async throws -> [EquippedItem] {
-        guard let equipmentUrl = URL(string: "https://us.api.blizzard.com/profile/wow/character/\(realm)/\(name)/achievements/statistics\(Constants.accessTokenURL)") else {
-            throw NetworkError.badURL
-        }
-        
-        let (data, response) = try await URLSession.shared.data(from: equipmentUrl)
-        
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            throw NetworkError.badID
-        }
-        
-        let characterResponse = try? JSONDecoder().decode(CharacterEquipmentSummary.self, from: data)
-        return characterResponse?.equippedItems ?? []
+    //current pvp rating - 2v2
+    func fetchCurrent2v2Rating(name: String, realm realmSlug: String, completion: @escaping (Result<PvP, Error>) -> ()) {
+        let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/pvp-bracket/2v2"
+        jsonManager.performRequest(with: url, completion: completion)
     }
     
-    func getItemInfo(itemID: String, realm: String) async throws -> [EquippedItem] {
-        guard let itemURL = URL(string: "https://us.api.blizzard.com/data/wow/media/item/\(itemID)\(Constants.accessTokenURL)") else {
-            throw NetworkError.badURL
-        }
-        
-        let (data, response) = try await URLSession.shared.data(from: itemURL)
-        
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            throw NetworkError.badID
-        }
-        
-        let itemResponse = try? JSONDecoder().decode(CharacterEquipmentSummary.self, from: data)
-        return itemResponse?.equippedItems ?? []
+    //current pvp rating - 3v3
+    func fetchCurrent3v3Rating(name: String, realm realmSlug: String, completion: @escaping (Result<PvP, Error>) -> ()) {
+        let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/pvp-bracket/3v3"
+        jsonManager.performRequest(with: url, completion: completion)
     }
     
-    
+    //current pvp rating - rbg
+    func fetchCurrentRBGRating(name: String, realm realmSlug: String, completion: @escaping (Result<PvP, Error>) -> ()) {
+        let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/pvp-bracket/rbg"
+        jsonManager.performRequest(with: url, completion: completion)
+    }
+
+    //item info - icon image
+    func fetchItemInfo() {
+        
+    }
 }
 
 
