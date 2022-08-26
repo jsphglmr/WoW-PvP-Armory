@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PVPModel: Codable {
+struct PvP: Codable {
     let character: Character
     let faction: Faction
     let bracket: Bracket

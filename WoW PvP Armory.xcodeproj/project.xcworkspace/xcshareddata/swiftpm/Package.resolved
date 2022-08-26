@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "oauthswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OAuthSwift/OAuthSwift.git",
+      "state" : {
+        "revision" : "a471698f0b200a9ffe5572662a7b7a411f2511fc",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

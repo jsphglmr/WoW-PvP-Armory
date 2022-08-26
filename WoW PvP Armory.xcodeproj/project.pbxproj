@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C73ACECB28B282A9007633E2 /* PvPColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEC528B282A9007633E2 /* PvPColorModel.swift */; };
-		C73ACECC28B282A9007633E2 /* CharacterAchievementStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEC628B282A9007633E2 /* CharacterAchievementStatistics.swift */; };
+		C73ACECB28B282A9007633E2 /* PvPColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEC528B282A9007633E2 /* PvPColorScheme.swift */; };
 		C73ACECD28B282A9007633E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEC728B282A9007633E2 /* Constants.swift */; };
-		C73ACECE28B282A9007633E2 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEC828B282A9007633E2 /* Realm.swift */; };
-		C73ACECF28B282A9007633E2 /* CharacterEquipmentSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEC928B282A9007633E2 /* CharacterEquipmentSummary.swift */; };
 		C73ACED028B282A9007633E2 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACECA28B282A9007633E2 /* Character.swift */; };
 		C73ACED228B28C69007633E2 /* LoadingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACED128B28C69007633E2 /* LoadingSpinner.swift */; };
 		C73ACED928B53284007633E2 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACED828B53284007633E2 /* InfoView.swift */; };
 		C73ACEDB28B536D5007633E2 /* FontAndBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEDA28B536D5007633E2 /* FontAndBackground.swift */; };
 		C73ACEDD28B54023007633E2 /* CharacterSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEDC28B54023007633E2 /* CharacterSearch.swift */; };
 		C73ACEDF28B542FA007633E2 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEDE28B542FA007633E2 /* ErrorView.swift */; };
-		C73ACEE328B5914C007633E2 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEE228B5914C007633E2 /* ItemViewModel.swift */; };
 		C73ACEE528B5C3F9007633E2 /* ServerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ACEE428B5C3F9007633E2 /* ServerList.swift */; };
 		C7952BF628AC4BB600D8E51F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952BF528AC4BB600D8E51F /* SearchBar.swift */; };
 		C7952BF828AC4C1600D8E51F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952BF728AC4C1600D8E51F /* ItemView.swift */; };
@@ -38,6 +34,10 @@
 		C7952C2628B2793C00D8E51F /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7952C1628B278D100D8E51F /* SFMono-Semibold.otf */; };
 		C7952C2728B2793C00D8E51F /* SFMono-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7952C1828B278D200D8E51F /* SFMono-SemiboldItalic.otf */; };
 		C7952C2A28B27E1C00D8E51F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7952C2928B27E1C00D8E51F /* Fonts.swift */; };
+		C797669128B7CCAF007A436B /* PvP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C797669028B7CCAF007A436B /* PvP.swift */; };
+		C797669328B7D166007A436B /* CharacterEquipmentSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C797669228B7D166007A436B /* CharacterEquipmentSummary.swift */; };
+		C797669528B7D196007A436B /* CharacterAchievementStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C797669428B7D196007A436B /* CharacterAchievementStatistics.swift */; };
+		C797669828B80C6E007A436B /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C797669728B80C6E007A436B /* OAuthSwift */; };
 		C7DB16FB28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB16FA28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift */; };
 		C7DB16FD28A4970C001A66FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB16FC28A4970C001A66FD /* ContentView.swift */; };
 		C7DB16FF28A4970D001A66FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DB16FE28A4970D001A66FD /* Assets.xcassets */; };
@@ -45,18 +45,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C73ACEC528B282A9007633E2 /* PvPColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PvPColorModel.swift; path = Model/PvPColorModel.swift; sourceTree = "<group>"; };
-		C73ACEC628B282A9007633E2 /* CharacterAchievementStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterAchievementStatistics.swift; path = Model/CharacterAchievementStatistics.swift; sourceTree = "<group>"; };
+		C73ACEC528B282A9007633E2 /* PvPColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PvPColorScheme.swift; path = Model/PvPColorScheme.swift; sourceTree = "<group>"; };
 		C73ACEC728B282A9007633E2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C73ACEC828B282A9007633E2 /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = Model/Realm.swift; sourceTree = "<group>"; };
-		C73ACEC928B282A9007633E2 /* CharacterEquipmentSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterEquipmentSummary.swift; path = Model/CharacterEquipmentSummary.swift; sourceTree = "<group>"; };
 		C73ACECA28B282A9007633E2 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Character.swift; path = Model/Character.swift; sourceTree = "<group>"; };
 		C73ACED128B28C69007633E2 /* LoadingSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSpinner.swift; sourceTree = "<group>"; };
 		C73ACED828B53284007633E2 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		C73ACEDA28B536D5007633E2 /* FontAndBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAndBackground.swift; sourceTree = "<group>"; };
 		C73ACEDC28B54023007633E2 /* CharacterSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearch.swift; sourceTree = "<group>"; };
 		C73ACEDE28B542FA007633E2 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		C73ACEE228B5914C007633E2 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		C73ACEE428B5C3F9007633E2 /* ServerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerList.swift; sourceTree = "<group>"; };
 		C7952BF528AC4BB600D8E51F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		C7952BF728AC4C1600D8E51F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
@@ -76,6 +72,9 @@
 		C7952C1A28B278D200D8E51F /* SFMono-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-HeavyItalic.otf"; sourceTree = "<group>"; };
 		C7952C1B28B278D200D8E51F /* SFMono-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-BoldItalic.otf"; sourceTree = "<group>"; };
 		C7952C2928B27E1C00D8E51F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		C797669028B7CCAF007A436B /* PvP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PvP.swift; sourceTree = "<group>"; };
+		C797669228B7D166007A436B /* CharacterEquipmentSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEquipmentSummary.swift; sourceTree = "<group>"; };
+		C797669428B7D196007A436B /* CharacterAchievementStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAchievementStatistics.swift; sourceTree = "<group>"; };
 		C7DB16F728A4970C001A66FD /* WoW PvP Armory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW PvP Armory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DB16FA28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoW_PvP_ArmoryApp.swift; sourceTree = "<group>"; };
 		C7DB16FC28A4970C001A66FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C797669828B80C6E007A436B /* OAuthSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,11 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				C73ACECA28B282A9007633E2 /* Character.swift */,
-				C73ACEE228B5914C007633E2 /* ItemViewModel.swift */,
-				C73ACEC628B282A9007633E2 /* CharacterAchievementStatistics.swift */,
-				C73ACEC928B282A9007633E2 /* CharacterEquipmentSummary.swift */,
-				C73ACEC528B282A9007633E2 /* PvPColorModel.swift */,
-				C73ACEC828B282A9007633E2 /* Realm.swift */,
+				C797669428B7D196007A436B /* CharacterAchievementStatistics.swift */,
+				C797669228B7D166007A436B /* CharacterEquipmentSummary.swift */,
+				C797669028B7CCAF007A436B /* PvP.swift */,
+				C73ACEC528B282A9007633E2 /* PvPColorScheme.swift */,
 				C73ACEE428B5C3F9007633E2 /* ServerList.swift */,
 			);
 			name = Model;
@@ -216,6 +215,9 @@
 			dependencies = (
 			);
 			name = "WoW PvP Armory";
+			packageProductDependencies = (
+				C797669728B80C6E007A436B /* OAuthSwift */,
+			);
 			productName = "WoW PvP Armory";
 			productReference = C7DB16F728A4970C001A66FD /* WoW PvP Armory.app */;
 			productType = "com.apple.product-type.application";
@@ -244,6 +246,9 @@
 				Base,
 			);
 			mainGroup = C7DB16EE28A4970C001A66FD;
+			packageReferences = (
+				C797669628B80C6E007A436B /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+			);
 			productRefGroup = C7DB16F828A4970C001A66FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,26 +288,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73ACED928B53284007633E2 /* InfoView.swift in Sources */,
-				C73ACECC28B282A9007633E2 /* CharacterAchievementStatistics.swift in Sources */,
 				C73ACEDF28B542FA007633E2 /* ErrorView.swift in Sources */,
 				C73ACECD28B282A9007633E2 /* Constants.swift in Sources */,
 				C7952C2A28B27E1C00D8E51F /* Fonts.swift in Sources */,
 				C7952C0628B0682300D8E51F /* CharacterEquipmentView.swift in Sources */,
 				C7DB16FD28A4970C001A66FD /* ContentView.swift in Sources */,
-				C73ACECF28B282A9007633E2 /* CharacterEquipmentSummary.swift in Sources */,
+				C797669128B7CCAF007A436B /* PvP.swift in Sources */,
 				C73ACEE528B5C3F9007633E2 /* ServerList.swift in Sources */,
 				C73ACED028B282A9007633E2 /* Character.swift in Sources */,
-				C73ACECB28B282A9007633E2 /* PvPColorModel.swift in Sources */,
+				C73ACECB28B282A9007633E2 /* PvPColorScheme.swift in Sources */,
 				C7952C0A28B1BAD100D8E51F /* LoadingView.swift in Sources */,
 				C7DB16FB28A4970C001A66FD /* WoW_PvP_ArmoryApp.swift in Sources */,
+				C797669528B7D196007A436B /* CharacterAchievementStatistics.swift in Sources */,
 				C7952C0028AD9C0D00D8E51F /* JSONManager.swift in Sources */,
-				C73ACEE328B5914C007633E2 /* ItemViewModel.swift in Sources */,
 				C73ACED228B28C69007633E2 /* LoadingSpinner.swift in Sources */,
 				C73ACEDD28B54023007633E2 /* CharacterSearch.swift in Sources */,
+				C797669328B7D166007A436B /* CharacterEquipmentSummary.swift in Sources */,
 				C7952BF628AC4BB600D8E51F /* SearchBar.swift in Sources */,
 				C7952BF828AC4C1600D8E51F /* ItemView.swift in Sources */,
 				C73ACEDB28B536D5007633E2 /* FontAndBackground.swift in Sources */,
-				C73ACECE28B282A9007633E2 /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +509,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C797669628B80C6E007A436B /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C797669728B80C6E007A436B /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C797669628B80C6E007A436B /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C7DB16EF28A4970C001A66FD /* Project object */;
 }

@@ -12,3 +12,10 @@ struct Character: Codable {
     let name: String
     let realm: Realm
 }
+
+// MARK: - Realm
+struct Realm: Codable {
+    let id: Int
+    let name: String
+    let slug: String
+}
