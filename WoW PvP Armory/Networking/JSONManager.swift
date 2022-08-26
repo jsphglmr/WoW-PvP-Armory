@@ -53,18 +53,4 @@ class JSONManager: ObservableObject {
             return nil
         }
     }
-    
-    //MARK: - Fetch
-    
-    func fetchWowCharacterEquipmentSummary(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterEquipmentSummary, Error>) -> ()) {
-        let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/equipment"
-        performRequest(with: url, completion: completion)
-    }
-    
-    func fetchWowCharacterAchievementStatistics(name: String, realm realmSlug: String, completion: @escaping (Result<CharacterAchievementStatistics, Error>) -> ()) {
-        let url = "https://us.api.blizzard.com/profile/wow/character/\(realmSlug)/\(name)/achievements/statistics"
-        performRequest(with: url, completion: completion)
-    }
-    
-    
 }
