@@ -7,15 +7,9 @@
 
 import SwiftUI
 
-class JSONManager: ObservableObject {
+class JSONManager {
     
-    
-    @Published var characterEquipment = [CharacterEquipmentSummary]()
-    @Published var characterAchievementStatistics = [CharacterAchievementStatistics]()
-    @Published var isLoading: Bool = false
-    @Published var errorMessage: String? = nil
-    
-    
+    var accessToken = ""
     
     //MARK: - Perform Request
     func performRequest<T:Decodable>(with urlString: String, completion: @escaping (Result<T, Error>) -> ()) {
@@ -23,7 +17,7 @@ class JSONManager: ObservableObject {
             let session = URLSession(configuration: .default)
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
-            request.allHTTPHeaderFields = ["Authorization": "Bearer \(Constants.accessToken)"]
+            request.allHTTPHeaderFields = ["Authorization": "Bearer \(accessToken)"]
             
             let task = session.dataTask(with: request) {  data, response, error in
                 if let error = error {
